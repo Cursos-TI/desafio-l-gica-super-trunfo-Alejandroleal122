@@ -1,178 +1,735 @@
 #include <stdio.h>
- #include <stdlib.h>
- #include <time.h>
+
+int main(){
+     //Variaveis 1
+    char estado1;
  
- int main() {
+    char numerodacarta1[2];
  
-     //Carta 01
+    char nomedacidade1[30];
  
-     char estado[50];
-     char codigoestado[50];
-     char cidade[50];
-     int populacao, pontoturistico;
-     float area, pib, densidadepopulacional, pibpercapita;
+    int População1;
+     
+    float area1;
  
-     printf("Carta 01 \n");
+    float pib1;
+ 
+    int numerodept1;
+
+    float densidadepopulacional1;
+
+    float pibpercapita1;
+
+    //variaveis carta 2
+
+    char estado2;
+ 
+    char numerodacarta2[2];
+ 
+    char nomedacidade2[30];
+ 
+    int População2;
+     
+    float area2;
+ 
+    float pib2;
+ 
+    int numerodept2;
+
+    float densidadepopulacional2;
+
+    float pibpercapita2;
+
+    int menuprincipal;
+///////////////////////////////////////////////////////////////////////////////////////////
+
+    printf("********************SUPER TRUNFO*************************\n");
+
+    printf("1. Iniciar Jogo\n");
+    printf("2. Regras\n");
+    printf("3. Sair\n");
+scanf("%d", &menuprincipal);
+
+    switch (menuprincipal)
+    {
+    case 1:
+    // perguntas 1
+    printf("coloque o seu estado com 1 siglas:\n");
+    scanf(" %c", &estado1);
+
+    printf("coloque o numero da carta. ex:03\n");
+    scanf("%s", numerodacarta1);
+
+    printf("coloque o nome da cidade:\n");
+    scanf("%s", nomedacidade1);
+
+    printf("coloque a População:\n");
+    scanf("%d", &População1);
+
+    printf("coloque a Area:\n");
+    scanf("%f", &area1);
+
+    printf("coloque o pib:\n");
+    scanf("%f", &pib1);
+
+    printf("coloque o Numero de pontos Turisticos:\n");
+    scanf("%d", &numerodept1);
+
+    densidadepopulacional1 = População1 / area1;
+
+    pibpercapita1 = pib1 / População1;
+
+//perguntas 2
+
+printf("****AGORA VAMOS PARA A CARTA 2****\n");
+
+printf("coloque o seu estado com 1 siglas:\n");
+scanf(" %c", &estado2);
+
+printf("coloque o numero da carta. ex:03\n");
+scanf("%s", &numerodacarta2);
+
+printf("coloque o nome da cidade:\n");
+scanf("%s", &nomedacidade2);
+
+printf("coloque a População:\n");
+scanf("%d", &População2);
+
+printf("coloque a Area:\n");
+scanf("%f", &area2);
+
+printf("coloque o pib:\n");
+scanf("%f", &pib2);
+
+printf("coloque o Numero de pontos Turisticos:\n");
+scanf("%d", &numerodept2);
+
+densidadepopulacional2 = População2 / area2;
+
+pibpercapita1 = pib2 / População2;
+/////////////////////////
+
+int menucomparacaocarta1;
+int menucomparacaocarta2;
+
+printf("***VOCE CONCLUIU AS INFORMACOES*** \n");
+printf("Qual atributo voce Deseja comparar da carta 1? \n");
+printf("1. Populacao: \n");
+printf("2. Area: \n");
+printf("3. Pib: \n");
+printf("4. Pib Per Capita: \n");
+printf("5. Numero de Pontos Turisticos: \n");
+printf("6. Densidade Populacional: \n");
+scanf("%d", &menucomparacaocarta1);
+
+int resultado1 = População1 > População2 ? 1 : 0;
+int resultado2 = area1 > area2 ? 1 : 0;
+int resultado3 = pib1 > pib2 ? 1 : 0;
+int resultado4 = pibpercapita1 > pibpercapita2 ? 1 : 0;
+int resultado5 = numerodept1 > numerodept2 ? 1 : 0;
+int resultado6 = densidadepopulacional1 > densidadepopulacional2 ? 1 : 0;
+
+
+////
+switch (menucomparacaocarta1)
+{
+    //POPULACAO - COMPARACAO
+    case 1:
+ printf("Voce comparara a Populacao com qual atributo da carta 2?\n");
+printf("1. Populacao: \n");//
+printf("2. Area: \n");
+printf("3. Pib: \n");
+printf("4. Pib Per Capita: \n");
+printf("5. Numero de Pontos Turisticos: \n");
+printf("6. Densidade Populacional: \n");
+ scanf("%d", &menucomparacaocarta2);
+
+ switch (menucomparacaocarta2)
+ {
+ case 1:
+
+ if (resultado1 == 1)
+ {
+    printf("A CARTA 1 VENCEU A DISPUTA");
+ }else
+ {
+    printf("A CARTA 2 VENCEU");
+ }
+  break;
+
+  case 2:
+  
+  if (resultado1 > resultado2)
+  {
+     printf("A CARTA 1 VENCEU A DISPUTA");
+  }else if(resultado1 == resultado3)
+  {
+     printf("EMPATOU");
+  }else
+  {
+    printf("CARTA 2 VENCEU");
+  }
+    break;
+    case 3:
+    if (resultado1 > resultado3)
+    {
+       printf("A CARTA 1 VENCEU A DISPUTA");
+    }else if(resultado1 == resultado3)
+    {
+       printf("EMPATOU");
+    }else
+    {
+      printf("CARTA 2 VENCEU");
+    }
+    break;
+
+    case 4:
+    if (resultado1 > resultado4)
+    {
+       printf("A CARTA 1 VENCEU A DISPUTA");
+    }else if(resultado1 == resultado4)
+    {
+       printf("EMPATOU");
+    }else
+    {
+      printf("CARTA 2 VENCEU");
+    }
+    break;
+    case 5:
+    if (resultado1 > resultado5)
+    {
+       printf("A CARTA 1 VENCEU A DISPUTA");
+    }else if(resultado1 == resultado5)
+    {
+       printf("EMPATOU");
+    }else
+    {
+      printf("CARTA 2 VENCEU");
+    }
+    break;
+    case 6:
+    if (resultado1 > resultado6)
+    {
+       printf("A CARTA 1 VENCEU A DISPUTA");
+    }else if(resultado1 == resultado6)
+    {
+       printf("EMPATOU");
+    }else
+    {
+      printf("CARTA 2 VENCEU");
+    }
+    break;
+ 
+ default:
+ printf("opcao invalida!");
+    break;
+ }
+   break;
+   //FINALIZADO
+
+   //Area
+    case 2:
+    printf("Voce comparara a AREA com qual atributo da carta 2?\n");
+    printf("1. Populacao: \n");//
+    printf("2. Area: \n");
+    printf("3. Pib: \n");
+    printf("4. Pib Per Capita: \n");
+    printf("5. Numero de Pontos Turisticos: \n");
+    printf("6. Densidade Populacional: \n");
+     scanf("%d", &menucomparacaocarta2);
     
-     float populacao, pontoturistico;
-     float area, pib, densidadepopulacional;
-     int carta_01, carta_02;
-     char pais_01[50], pais_02[50];
- 
-     printf("Digite o nome do estado: ");
-     scanf("%s ", &estado);
- 
-     printf("Digite o código do estado: ");
-     scanf("%s ", &codigoestado);
-     printf("Carta 01 \n");
- 
-     printf("Digite o nome da cidade: ");
-     scanf("%s ", &cidade);
-     printf("Qual o país: ");
-     scanf("%s", &pais_01);
- 
-     printf("Digite a população: ");
-     scanf("%d", &populacao);
-     scanf("%f", &populacao);
- 
-     printf("Digite a área: ");
-     scanf("%f", &area);
- @@ -31,34 +28,24 @@ int main() {
-     scanf("%f", &pib);
- 
-     printf("Digite a quantidade de pontos turísticos: ");
-     scanf("%d ", &pontoturistico);
-     scanf("%f ", &pontoturistico);
- 
-     densidadepopulacional = populacao / area;
-     pibpercapita = pib / populacao;
- 
-     //Carta 02
- 
-     printf("Carta 02 \n");
- 
-     char estado_2[50];
-     char codigoestado_2[50];
-     char cidade_2[50];
-     int populacao_2, pontoturistico_2;
-     float area_2, pib_2, densidadepopulacional_2, pibpercapita_2;
- 
- 
- 
-     printf("Digite o nome do estado: ");
-     scanf("%s ", &estado_2);
- 
-     printf("Digite o código do estado: ");
-     scanf("%s ", &codigoestado_2);
- 
-     printf("Digite o nome da cidade: ");
-     scanf("%s ", &cidade_2);
-     float populacao_2, pontoturistico_2;
-     float area_2, pib_2, densidadepopulacional_2;
- 
+     switch (menucomparacaocarta2)
+     {
+     case 1:
+    
+     if (resultado2 > resultado1)
+     {
+        printf("A CARTA 1 VENCEU A DISPUTA");
+     }else if(resultado2 == resultado1)
+     {
+        printf("EMPATOU");
+     }else
+     {
+       printf("CARTA 2 VENCEU");
+     }
+      break;
+    
+      case 2:
       
-     printf("Qual o país: ");
-     scanf("%s", &pais_02);
+      if (resultado2 == 1)
+      {
+         printf("A CARTA 1 VENCEU A DISPUTA");
      
-     printf("Digite a população: ");
-     scanf("%d", &populacao_2);
-     scanf("%f", &populacao_2);
- 
-     printf("Digite a área: ");
-     scanf("%f", &area_2);
- @@ -67,17 +54,94 @@ int main() {
-     scanf("%f", &pib_2);
- 
-     printf("Digite a quantidade de pontos turísticos: ");
-     scanf("%d", &pontoturistico_2);
-     scanf("%f", &pontoturistico_2);
- 
-     densidadepopulacional_2 = populacao_2 / area_2;
-     pibpercapita_2 = pib_2 / populacao_2;
+      }else
+      {
+        printf("CARTA 2 VENCEU");
+      }
+        break;
+        case 3:
+        if (resultado2 > resultado3)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado2 == resultado3)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
     
- if (populacao > populacao_2) {
-     printf("a carta 01 tem a maior população ##Carta vencedora## \n")
- } else{
-     printf("a carta 02 tem a maior população ##Carta vencedora##\n")    
- 
- 
- srand(time(0));
- 
- printf(" ### Super trunfo ### \n");
- printf("carta 1 \n");
- printf("escolha a opção: \n");
- printf("1.População \n");
- printf("2.Área \n");
- printf("3.Pontos turísticos \n");
- printf("4.Densidade democrática \n");
- scanf("%d", &carta_01);
- 
- printf(" ### Super trunfo ### \n");
- printf("carta 2 \n");
- printf("escolha a opção: \n");
- printf("1.População \n");
- printf("2.Área \n");
- printf("3.Pontos turísticos \n");
- printf("4.Densidade democrática \n");
- scanf("%d", &carta_02);
- 
- 
- 
- switch (carta_01)
- {
- case 1:
-     printf("O jogador 1: População - ", populacao);
-     break;
- 
- case 2:
-     printf("O jogador 1: Área - ", area);
-     break;    
- 
- case 3:
-     printf("O jogador 1: pontos turísticos - ", pontoturistico);
-     break;
+        case 4:
+        if (resultado2 > resultado4)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado2 == resultado4)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 5:
+        if (resultado2 > resultado5)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado2 == resultado5)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 6:
+        if (resultado2 > resultado6)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado2 == resultado6)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
      
- case 4:
-     printf("O jogador 1: Densidade democrática - ", densidadepopulacional);
-     break;    
- 
+     default:
+     printf("opcao invalida!");
+        break;
+     }
+     /// Finalizado
+    break;
+
+    //pib
+    case 3:
+    printf("Voce comparara a PIB com qual atributo da carta 2?\n");
+    printf("1. Populacao: \n");//
+    printf("2. Area: \n");
+    printf("3. Pib: \n");
+    printf("4. Pib Per Capita: \n");
+    printf("5. Numero de Pontos Turisticos: \n");
+    printf("6. Densidade Populacional: \n");
+     scanf("%d", &menucomparacaocarta2);
+    
+     switch (menucomparacaocarta2)
+     {
+     case 1:
+    
+     if (resultado3 > resultado1)
+     {
+        printf("A CARTA 1 VENCEU A DISPUTA");
+     }else if(resultado3 == resultado1)
+     {
+        printf("EMPATOU");
+     }else
+     {
+       printf("CARTA 2 VENCEU");
+     }
+      break;
+    
+      case 2:
+      
+      if (resultado3 > resultado2)
+      {
+         printf("A CARTA 1 VENCEU A DISPUTA");
+     
+      }else if(resultado3 == resultado2)
+      {
+        printf("EMPATOU");
+      }else
+      {
+        printf("A CARTA 2 VENCEU");
+      }
+      
+        break;
+        case 3:
+        if (resultado3 == 1)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+    
+        case 4:
+        if (resultado3 > resultado4)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado3 == resultado4)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 5:
+        if (resultado3 > resultado5)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado3 == resultado5)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 6:
+        if (resultado3 > resultado6)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado3 == resultado6)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+     
+     default:
+     printf("opcao invalida!");
+        break;
+     }
+     //FINALIZADO
+     
+    break;
+
+    case 4:
+    printf("Voce comparara a PIB PER CAPITA com qual atributo da carta 2?\n");
+    printf("1. Populacao: \n");//
+    printf("2. Area: \n");
+    printf("3. Pib: \n");
+    printf("4. Pib Per Capita: \n");
+    printf("5. Numero de Pontos Turisticos: \n");
+    printf("6. Densidade Populacional: \n");
+     scanf("%d", &menucomparacaocarta2);
+    
+     switch (menucomparacaocarta2)
+     {
+     case 1:
+    
+     if (resultado4 > resultado1)
+     {
+        printf("A CARTA 1 VENCEU A DISPUTA");
+     }else if(resultado4 == resultado1)
+     {
+        printf("EMPATOU");
+     }else
+     {
+       printf("CARTA 2 VENCEU");
+     }
+      break;
+    
+      case 2:
+      
+      if (resultado4 > resultado2)
+      {
+         printf("A CARTA 1 VENCEU A DISPUTA");
+     
+      }else if(resultado4 == resultado2)
+      {
+        printf("EMPATOU");
+      }else
+      {
+        printf("CARTA 2 VENCEU");
+      }
+      
+        break;
+        case 3:
+        if (resultado4 > resultado3)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado4 == resultado3)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+    
+        case 4:
+        if (resultado4 == 1)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 5:
+        if (resultado4 > resultado5)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado4 == resultado5)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 6:
+        if (resultado4 > resultado6)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado4 == resultado6)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+     
+     default:
+     printf("opcao invalida!");
+        break;
+     }
+    
+    break;
+    //finalizado
+
+    case 5:
+    printf("Voce comparara a PIB PER CAPITA com qual atributo da carta 2?\n");
+    printf("1. Populacao: \n");//
+    printf("2. Area: \n");
+    printf("3. Pib: \n");
+    printf("4. Pib Per Capita: \n");
+    printf("5. Numero de Pontos Turisticos: \n");
+    printf("6. Densidade Populacional: \n");
+     scanf("%d", &menucomparacaocarta2);
+    
+     switch (menucomparacaocarta2)
+     {
+     case 1:
+    
+     if (resultado5 > resultado1)
+     {
+        printf("A CARTA 1 VENCEU A DISPUTA");
+     }else if(resultado4 == resultado1)
+     {
+        printf("EMPATOU");
+     }else
+     {
+       printf("CARTA 2 VENCEU");
+     }
+      break;
+    
+      case 2:
+      
+      if (resultado5 > resultado2)
+      {
+         printf("A CARTA 1 VENCEU A DISPUTA");
+     
+      }else if(resultado5 == resultado2)
+      {
+        printf("EMPATOU");
+      }else
+      {
+        printf("CARTA 2 VENCEU");
+      }
+      
+        break;
+        case 3:
+        if (resultado5 > resultado3)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado5 == resultado3)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+    
+        case 4:
+        if (resultado5 > resultado4)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado5 == resultado4)
+        {
+          printf("EMPATE");
+        }else
+        {
+            printf("CARTA 2 GANHOU");
+        }
+        
+        break;
+        case 5:
+        if (resultado5 == 1)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        case 6:
+        if (resultado5 > resultado6)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado5 == resultado6)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+     
+     default:
+     printf("opcao invalida!");
+        break;
+     }
+    
+    break;
+
+    case 6:
+    printf("Voce comparara o NUMERO DE PONTOS TURISTICOS com qual atributo da carta 2?\n");
+    printf("1. Populacao: \n");//
+    printf("2. Area: \n");
+    printf("3. Pib: \n");
+    printf("4. Pib Per Capita: \n");
+    printf("5. Numero de Pontos Turisticos: \n");
+    printf("6. Densidade Populacional: \n");
+     scanf("%d", &menucomparacaocarta2);
+    
+     switch (menucomparacaocarta2)
+     {
+     case 1:
+    
+     if (resultado6 > resultado1)
+     {
+        printf("A CARTA 1 VENCEU A DISPUTA");
+     }else if(resultado6 == resultado1)
+     {
+        printf("EMPATOU");
+     }else
+     {
+       printf("CARTA 2 VENCEU");
+     }
+      break;
+    
+      case 2:
+      
+      if (resultado6 > resultado2)
+      {
+         printf("A CARTA 1 VENCEU A DISPUTA");
+     
+      }else if(resultado6 == resultado2)
+      {
+        printf("EMPATOU");
+      }else
+      {
+        printf("CARTA 2 VENCEU");
+      }
+      
+        break;
+        case 3:
+        if (resultado6 > resultado3)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado6 == resultado3)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+    
+        case 4:
+        if (resultado6 > resultado4)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado6 == resultado4)
+        {
+          printf("EMPATE");
+        }else
+        {
+            printf("CARTA 2 GANHOU");
+        }
+        
+        break;
+        case 5:
+        if (resultado6 > resultado5)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else if(resultado6 == resultado5)
+        {
+           printf("EMPATOU");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+        break;
+        case 6:
+        if (resultado6 == 1)
+        {
+           printf("A CARTA 1 VENCEU A DISPUTA");
+        }else
+        {
+          printf("CARTA 2 VENCEU");
+        }
+        break;
+     
+     default:
+     printf("opcao invalida!");
+        break;
+     }
+    /* code */
+    break;
  
  default:
-     printf("Opção inválida!");
-     break;
+ printf("Opcao INVALIDA!");
+    break;
  }
- 
- switch (carta_02)
- {
- case 1:
-     printf("O jogador 2: População", populacao_2);
-     break;
- 
- case 2:
-     printf("O jogador 2: Área", area_2);
-     break;    
- 
- case 3:
-     printf("O jogador 2: pontos turísticos", pontoturistico_2);
-     break;
- 
- case 4:
-     printf("O jogador 2: Densidade democrática", densidadepopulacional_2);
-     break;    
- 
- 
- default:
-     printf("Opção inválida!");
-     break;
- }
- 
- if (carta_01 == carta_02){
-     printf("### Jogo empatou ### \n");
- } else if ((carta_01 == 1 > carta_02 == 1) ||
-           (carta_01 == 2 > carta_02 == 2) ||
-           (carta_01 == 3 > carta_02 == 3) ||
-           (carta_01 == 4 > carta_02 == 4)){
-     printf("### A carta 01 venceu ### \n");
- }else{
-     printf("### A carta 02 venceu ###");
- }
+
+//////
+
+
+    ////
+
+        break;
+
+        case 2:
+          printf("*****REGRAS*****\n");
+          printf("Aqui voce montara 2 cartas, escolhendo atributos de cidades.\n");
+          printf("No final voce escolhera para Batalha, qual atributo voce quer comparar\n");
+        /* code */
+        break;
+        case 3:
+        printf("Fim.\n");
+        break;
+    }
+///////////////
+ printf("\nOBRIGADO POR PARTICIPAR DO SUPER TRUNFO.\n");
+    }
